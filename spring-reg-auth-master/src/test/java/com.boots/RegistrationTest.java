@@ -24,13 +24,13 @@ public class RegistrationTest {
     private MockMvc mvc;
 
     @Test
-    public void contextCheck() throws Exception {
+    public void registrationContextCheck() throws Exception {
         this.mvc.perform(get("/registration")).andExpect(status().isOk()).andDo(print());
     }
 
     @Test
     @Sql(value = { "/DeleteUserTest.sql"}, executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
-    public void exampleTest() throws Exception {
+    public void registrationCheck() throws Exception {
                 this.mvc.perform(post("/registration").param("username", "coolNOne")
                 .param("password", "12345").param("passwordConfirm", "12345"))
                 .andExpect(status().is3xxRedirection()).andExpect(redirectedUrl("/login")).andDo(print());

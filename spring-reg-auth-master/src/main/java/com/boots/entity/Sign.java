@@ -69,13 +69,20 @@ public class Sign {
         this.user = user;
     }
 
-    public Sign(Long id, String name, String email, String doctor, String text, Long user) {
+    public Sign(String name, String email, String doctor, String text, User user) {
+        this.name = name;
+        this.email = email;
+        this.doctor = doctor;
+        this.text = text;
+        this.user = user;
+    }
+
+    public Sign(Long id, String name, String email, String doctor, String text) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.doctor = doctor;
         this.text = text;
-        this.user = new UserService().findUserById(user);
     }
 
 

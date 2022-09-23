@@ -25,12 +25,12 @@ public class LoginTest {
     private MockMvc mvc;
 
     @Test
-    public void contextCheck() throws Exception {
+    public void loginContextCheck() throws Exception {
         this.mvc.perform(get("/login")).andExpect(status().isOk()).andDo(print());
     }
 
     @Test
-    public void LoginTest() throws Exception {
+    public void loginTest() throws Exception {
         this.mvc.perform(post("/login").param("username", "admin")
                         .param("password", "admin"))
                 .andExpect(status().is3xxRedirection()).andExpect(redirectedUrl("/")).andDo(print());

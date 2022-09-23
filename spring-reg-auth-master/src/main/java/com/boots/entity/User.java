@@ -29,6 +29,9 @@ public class User implements UserDetails {
     public User() {
     }
 
+    public User(String username, String password) {
+    }
+
     public Long getId() {
         return id;
     }
@@ -96,4 +99,6 @@ public class User implements UserDetails {
         this.roles = roles;
     }
 
+    public void getUsername(String renat) {
+    }
 }
